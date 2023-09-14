@@ -315,7 +315,22 @@
     <script src="~/assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="~/assets/js/waltzerjs.js"></script>
 
+   <!-- for table data search and pagenator -->'
+     <!-- for cdn  -->
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    </style>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+
+
     <script>
+      @* <!-- for table data search and pagenator -->' *@
+
+         $(document).ready(function () {
+            $('#myTable').dataTable();
+        });
+        
 
         $(window).scroll(function () {
             var height = $(window).scrollTop();
