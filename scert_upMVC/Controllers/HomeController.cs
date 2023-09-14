@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using scert_upMVC.Models;
 
 namespace scert_upMVC.Controllers
 {
     public class HomeController : Controller
     {
+        public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+        scert_upMVC.Models.DataServices db = new scert_upMVC.Models.DataServices();
+
         public ActionResult Index()
         {
 
@@ -29,8 +37,12 @@ namespace scert_upMVC.Controllers
 
         public ActionResult Our_faculty()
         {
+            List<manage_faculty> faculty = new List<manage_faculty>();
 
-            return View();
+            faculty = db.getfaculty();
+
+
+            return View(faculty);
         }
 
         #region teacher training
