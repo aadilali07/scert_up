@@ -1,0 +1,383 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Official Website of State Council of Educational Research and Training Uttar Pradesh </title>
+
+    @Styles.Render("~/assets/css/bootstrap.min.css")
+    @*@Styles.Render("~/assets/css/font-awesome.css")*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/green.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/font-awesome.css" />
+    <script type="text/javascript" src="~/assets/js/techpen-script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <style>
+        .container {
+            width: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="social-network social-circle hidden-xs">
+        <li><a href="https://www.facebook.com/SCERT-UP-614042438734430" target="_blank" class="icoFacebook external" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UCUyr6VRs1ig54emic9DIm5A" target="_blank" class="icoRss external" title="Rss"><i class="fa fa-youtube"></i></a></li>
+        <li><a  class="icoTwitter external" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://plus.google.com/discover" target="_blank" class="icoRss external" title="Rss"><i class="fa fa-google-plus"></i></a></li>
+    </ul>
+    <header>
+        <section class="top-nav">
+            <div class="container flag">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="time">
+                            <i class="fa fa-clock-o"></i>
+                            <noscript>
+                                Javascript Required
+                            </noscript>
+                            <script type="text/javascript">
+                                // <![CDATA[
+                                var d = new Date()
+                                var weekday = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+                                var monthname = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+                                document.write(weekday[d.getDay()] + ", ")
+                                document.write(d.getDate() + " ")
+                                document.write(monthname[d.getMonth()] + ", ")
+                                document.write(d.getFullYear())
+                                // ]]></script>
+                            <span id="clockDisplay">
+                                <script type="text/javascript">
+                                    function renderTime() {
+                                        var currentTime = new Date();
+                                        var diem = "AM";
+                                        var h = currentTime.getHours();
+                                        var m = currentTime.getMinutes();
+                                        var s = currentTime.getSeconds();
+                                        setTimeout('renderTime()', 1000);
+                                        if (h == 0) {
+                                            h = 12;
+                                        } else if (h > 12) {
+                                            h = h - 12;
+                                            diem = "PM";
+                                        }
+                                        if (h < 10) {
+                                            h = "0" + h;
+                                        }
+                                        if (m < 10) {
+                                            m = "0" + m;
+                                        }
+                                        if (s < 10) {
+                                            s = "0" + s;
+                                        }
+                                        var myClock = document.getElementById('clockDisplay');
+                                        myClock.textContent = h + ":" + m + ":" + s + " " + diem;
+                                        myClock.innerText = h + ":" + m + ":" + s + " " + diem;
+                                    }
+                                    renderTime();
+                                </script>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12 text-right hidden-sm hidden-xs">
+                        <div class="row">
+                            <ul id="textresizer">
+                                <li><a title="Skip to Main Content" class="hidden-xs skiper" accesskey="1" >Skip to Main Content</a></li>
+                                <li><a title="Screen Reader Access" class="hidden-xs" accesskey="2" href="screen-reader.html">Screen Reader Access</a></li>
+                                <li><a title="Sitemap" class="hidden-xs" accesskey="3" >Sitemap</a></li>
+                                <li class="textresizer"><a title="Normal" class="btn-xs" accesskey="4">A-</a></li>
+                                <li class="textresizer"><a title="Medium" class="btn-xs textresizer-active" accesskey="5">A</a></li>
+                                <li class="textresizer"><a title="Large" class="btn-xs" accesskey="6">A+</a></li>
+                                <!-- <li><a class="btn-xs defTheme btn-red" title="Red Theme" accesskey="5" href="~/assets/css/red.css"> T </a></li> -->
+                                @*<li><a class="btn-xs defTheme btn-green" title="Green Theme" accesskey="7" href="~/assets/css/green.css"> T </a></li>*@
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <div class="clearfix"></div>
+
+    <div class="container-fluid logo-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9"><a href="/home/Index"><img class="img-responsive" src="~/assets/images/logo.png" /></a></div>
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <div class="up-logo"><img class="img-responsive" src="~/assets/images/r-logo.png" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container-fluid t-menu">
+        <div class="container">
+            <div class="row">
+                @*<script>navbar()</script>*@
+                <div id="cssmenu">
+                    <ul>
+                        <li><a href="/home/Index">/home</a></li>
+                        <li class="has-sub">
+                            <a > About Us</a>
+                            <ul>
+                                <li><a href="/home/About_Us">About SCERTUP</a></li>
+                                <li><a href="/home/organization_structure">ORGANIZATION STRUCTURE</a></li>
+                                <li><a href="/home/Our_faculty">Our faculty</a></li>
+                                <li class="has-sub">
+                                    <a >Teacher Training</a>
+                                    <ul>
+                                        <li><a href="/home/pre_services">Pre Service</a></li>
+                                        <li><a href="/home/In_services">In Service</a></li>
+                                        <li><a href="/home/other_services">Others</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/home/Research_survey">Research Survey</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a >Units</a>
+                            <ul>
+                                <li><a href="/home/units">Units</a></li>
+                                <li><a href="/home/diets">DIETs</a></li>
+                                <li><a href="/home/pvt_institute">Pvt. Institutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a >Educational Materials</a>
+                            <ul>
+                                <li class="has-sub">
+                                    <a >Curriculum</a>
+                                    <ul>
+                                        <li><a href="/home/curriculum?curriculum=del">D.El.Ed.</a></li>
+                                        <li><a href="/home/curriculum?curriculum=ct">CT (Nursery)</a></li>
+                                        <li><a href="/home/curriculum?curriculum=ntt">NTT</a></li>
+                                        <li><a href="/home/curriculum?curriculum=dp">D.P.Ed.</a></li>
+                                        <li><a href="/home/curriculum?curriculum=pri">Primary</a></li>
+                                        <li><a href="/home/curriculum?curriculum=upper">Upper Primary</a></li>
+                                        <li><a href="/home/curriculum?curriculum=secondary">Secondary</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub">
+                                    <a >D.El.Ed. content material</a>
+                                    <ul>
+                                        <li><a href="/home/DEL_ContentMaterial?sem=1">Ist Semester</a></li>
+                                        <li><a href="/home/DEL_ContentMaterial?sem=2">2nd Semester</a></li>
+                                        <li><a href="/home/DEL_ContentMaterial?sem=3">3rd Semester</a></li>
+                                        <li><a href="/home/DEL_ContentMaterial?sem=4">4th Semester</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/home/training_Module">Training modules</a></li>
+                                <li class="has-sub">
+                                    <a >E-Books</a>
+                                    <ul>
+                                        <li><a href="/home/EBook?book=pothi">E-Pothi</a></li>
+                                        <li><a href="/home/EBook?book=magzine">Magazines</a></li>
+                                        <li><a href="/home/EBook?book=journals">Journals</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/home/Research">Research</a></li>
+                                <li><a href="/home/Survey">Survey</a></li>
+                                <li><a href="/home/others">Others</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/home/Govt_order">Government Order</a></li>
+                        <li><a href="/home/RTI">RTI</a></li>
+                        <li><a href="/home/Competition">Competitions</a></li>
+                        <li><a href="/home/Photo_Gallery">Photo Gallery</a></li>
+                        <li><a href="/home/Contact_US">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    @RenderBody()
+
+
+
+    <div class="clearfix"></div>
+
+    <section class="footer-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <div class="LinkFooter">
+                        <a href="terms-condition.html" title="Terms and Condition"> Terms and Condition</a>
+                        <a href="copyright-policy.html" title="Copyright Policy">Copyright Policy</a>
+                        <a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a>
+                        <a href="hyperlinking-policy.html" title="Hyperlinking Policy">Hyperlinking Policy</a>
+                        <a href="help.html" title="Help">Help</a>
+                        <a  title="Login">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-head">
+                        <h5>QUICK LINKS</h5>
+                        <ul class="hours_links">
+                            <li><a href="rti.html">RTI</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="ttms.html">T.T.M.S</a></li>
+                            <li><a href="education.html">Educational Materials</a></li>
+                            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a href="magazines.html">E-Magazine</a></li>
+                            <li><a href="government.html">Government Order</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-head">
+                        <h5>Units</h5>
+                        <ul class="hours_links ">
+                            <li><a href="units.html">Units</a></li>
+                            <li><a href="diet.html">DIETs</a></li>
+                            <li><a href="btc.html">Pvt. Institutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-head">
+                        <h5>About Us</h5>
+                        <ul class="hours_links ">
+                            <li><a href="about-us.html"> About SCERTUP</a></li>
+                            <li><a href="orgnization.html"> ORGANIZATION STRUCTURE</a></li>
+                            <li><a href="research-support.html"> Our faculty</a></li>
+                            <li><a href="pre-service.html"> Pre Service</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-head">
+                        <h5>LIFE@SCERTUP</h5>
+                        <ul class="hours_links ">
+                            <li><a href="campus-life.html"> Campus Life</a></li>
+                            <li><a href="entre.html"> Entrepreneurship</a></li>
+                            <li><a href="student.html"> Student Accommodation</a></li>
+                            <li><a href="fun-trips.html"> Fun Trips</a></li>
+                            <li>
+                                <!--<input type="button" class="downloadButton" value="download" />
+                                <a href="File/pdf-img.png" class="downloadLink">Hyperlink</a>-->
+                                <a href="https://www.scert-up.in/File/app-debug.apk" download rel="noopener noreferrer" target="_blank">
+                                    Download File
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <div class="footerText hidden-xs">
+                        Content on this website is published and Managed by State Council of Educational Research & Training, Uttar Pradesh.<br />
+                        For any query regarding this website, Please contact the <a href="index.html">www.scertup.org.in</a>
+                    </div>
+                    <div class="copyright"> This is the official Website of State Council of Educational Research & Training, Uttar Pradesh (SCERTUP).</div>
+                    <p class="design-comp">Design & Developed by : <a href="http://www.macreel.com/" target="_blank"><img src="~/assets/images/logo2.png" alt="logo" class="img-fluid"></a></p>
+                </div>
+                <!--<div class="col-md-3 hidden-xs">
+                    <div class="rightFooter">
+                        <div class="visitor ">
+                            You are Visitor No : <span class="black fo_sz2">
+                                <strong>
+                                    <span id="ctl00_lblHitCounter">
+                                        <span id="ctl00_lblHitCounter">-->
+                <!-- Start of CuterCounter Code -->
+                <!--<img src="http://www.cutercounter.com/hit.php?id=gfoqka&amp;nd=9&amp;style=34" border="0" alt="hit counter">-->
+                <!-- End of CuterCounter Code -->
+                <!--</span>
+                                    </span>
+                                </strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/waltzerjs.js"></script>
+
+    <script>
+
+        $(window).scroll(function () {
+            var height = $(window).scrollTop();
+            if (height > 150) {
+                $(".top-nav").addClass("pwdFxd");
+            }
+            if (height < 150) {
+                $(".top-nav").removeClass("pwdFxd");
+            }
+        });
+
+
+        $(".textresizer a").textresizer({
+            target: "content",
+            type: "fontSize",
+            sizes: ["12px", "14px", "16px"],
+            selectedIndex: 1
+        });
+
+     
+    </script>
+
+</body>
+</html>
+    @*<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <title>@ViewBag.Title</title>
+            @Styles.Render("~/Content/css")
+            @Scripts.Render("~/bundles/modernizr")
+        </head>
+        <body>
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Application name", "Index", "/home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("/home", "Index", "/home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+        </body>
+        </html>*@

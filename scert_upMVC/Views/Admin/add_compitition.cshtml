@@ -1,0 +1,98 @@
+﻿@model scert_upMVC.Models.manage_compitition
+@{
+    ViewBag.Title = "add_compitition";
+    Layout = "~/Views/Shared/admin_mst.cshtml";
+}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+
+                <div class="page-body">
+                    <!-- for change area -->
+                    <h3 class="add_heading">Add Competition Details </h3>
+                    @using (Html.BeginForm("compitition_insert", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+
+                        <div class="page-wrapper" style="background-color: white;">
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Competition Name </label> <br>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="Comp_Name" value="@Model.Comp_Name"
+                                           placeholder="Enter Competition Name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Competition Date </label> <br>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" name="Comp_Date" value="@Model.Comp_Date"
+                                           placeholder="Enter Competition Name">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Upload  File</label> <br>
+                                <div class="col-sm-10">
+
+                                    <input type="file" id="" name="fileupload1" class="dropify" data-default-file="@Model.Comp_File_Path" />
+                                    <input type="hidden" name="Comp_File_Path" value="@Model.Comp_File_Path" />
+                                </div>
+                            </div>
+
+
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <input type="hidden" name="id" value="@Model.id" />
+                                    <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Submit</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- for change area end  -->
+                    }
+                </div>
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    @if(TempData["Message"] != null) {<text >
+            $(window).load(function()
+                {
+                $(document).ready(function()
+                {
+                    @*var tt = @TempData["para"];*@
+                    var tt = @Html.Raw(Json.Encode(TempData["para"]));
+                    console.log(tt);
+                    if (tt === "true") {
+                        Swal.fire({
+                            icon: 'success',
+                            title: "Success",
+                            text: "@TempData["Message"]",
+                        });
+                    }
+                    else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: "Error",
+                            text: "@TempData["Message"]",
+                        });
+                    }
+                });
+            }); </text>
+    }
+</script>
+

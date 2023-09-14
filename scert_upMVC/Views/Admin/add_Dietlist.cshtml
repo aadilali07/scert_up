@@ -1,0 +1,90 @@
+﻿@model scert_upMVC.Models.manage_dietlist
+
+@{
+    ViewBag.Title = "add_Dietlist";
+    Layout = "~/Views/Shared/admin_mst.cshtml";
+}
+
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+
+                <div class="page-body">
+                    <!-- for change area -->
+                    <h3 class="add_heading">Add DIET Informations</h3>
+                    <div class="page-wrapper" style="background-color: white;">
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">DIET Name</label> <br>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Enter Diet name here ..." name="Diet_Name" value="@Model.Diet_Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">DIET Address</label> <br>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Enter Diet address here..." name="Address" value="@Model.Address">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Name of Incharge</label> <br>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Enter incharge name here..." name="InchargeName" value="@Model.InchargeName">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Designation</label> <br>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Enter designation here..." name="Designation" value="@Model.Designation">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Contact Number </label> <br>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" placeholder="Enter contact number here..." name="Contact" value="@Model.Contact">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Email ID </label> <br>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" placeholder="Enter email here..." name="Email" value="@Model.Email">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Website URL </label> <br>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" placeholder="Enter website  URL here..." name="Website" value="@Model.Website">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="row m-t-30">
+                            <div class="col-md-12">
+
+                                <input type="hidden" name="id" value="@Model.id" />
+                                <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Submit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- for change area end  -->
+                </div>
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>

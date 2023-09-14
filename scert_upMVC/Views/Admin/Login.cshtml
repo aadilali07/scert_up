@@ -1,0 +1,252 @@
+﻿@model scert_upMVC.Models.Login
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SCERT UP </title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="CodedThemes">
+    <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="CodedThemes">
+    <!-- Favicon icon -->
+    <link rel="icon" href="~/adminassets/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="~/adminassets/css/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="~/adminassets/icon/themify-icons/themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="~/adminassets/icon/icofont/css/icofont.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="~/adminassets/css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="fix-menu">
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+
+    <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                    <div class="login-card card-block auth-body mr-auto ml-auto">
+                        @using (Html.BeginForm("Login", "admin", FormMethod.Post, new { id = "Login" }))
+                        {
+                            <form class="md-float-material">
+                                <div class="text-center">
+                                    <h1 style="color: blue;"><b>SCERT UP</b></h1>
+                                </div>
+                                <div class="auth-box">
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-left txt-primary">Sign In</h3>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Your Email Address">
+                                        <span class="md-line"></span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password"  name="password" placeholder="Password">
+                                        <span class="md-line"></span>
+                                    </div>
+
+                                    @if (Request.QueryString["url"] != null && Request.QueryString["url"].ToString() != "")
+                                    {
+                                        <input type="hidden" name="url" id="url" value="@Request.QueryString["url"]" />
+                                    }
+
+
+                                    <div class="row m-t-25 text-left">
+                                        <div class="col-sm-7 col-xs-12">
+                                            <div class="checkbox-fade fade-in-primary">
+                                                <label>
+                                                    <input type="checkbox" value="">
+                                                    <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                    <span class="text-inverse">Remember me</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row m-t-30">
+
+                                        <div class="col-md-12">
+                                           <button id="btnlogin" type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                        </div>
+
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+
+                                    </div>
+
+                                </div>
+                            </form>
+                        }
+                        <!-- end of form -->
+                    </div>
+                    <!-- Authentication card end -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="~/adminassets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/adminassets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/adminassets/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="~/adminassets/js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="~/adminassets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="~/adminassets/js/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="~/adminassets/js/modernizr/css-scrollbars.js"></script>
+    <script type="text/javascript" src="~/adminassets/js/common-pages.js"></script>
+
+    <script>
+
+        $("#btnlogin").click(function () {
+
+
+            if ($("#username").val().trim() == "" || $("#username").val().trim().indexOf("\"") > -1 || $("#username").val().trim().indexOf("'") > -1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please Enter user name Correctly!',
+                    footer: 'JetSet',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                }).then((result) => {
+                    $("#email").focus();
+                });
+                return false;
+            }
+
+
+            if ($("#password").val().trim() == "" || $("#password").val().trim().indexOf("\"") > -1 || $("#password").val().trim().indexOf("'") > -1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please Enter Password Correctly!',
+                    footer: 'JetSet',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                }).then((result) => {
+                    $("#password").focus();
+                });
+                return false;
+            }
+
+            var formdata = $('#Login').serialize();
+
+            console.log(formdata);
+
+            Swal.fire({
+                title: 'Please wait!',
+                html: 'We are validating your details',
+                timer: 200000000,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                allowEnterKey: false,
+                didOpen: () => {
+                    Swal.showLoading()
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            });
+
+
+
+            $.ajax({
+                async: true,
+                url: "/admin/admin_Login",
+                type: 'POST',
+                data: formdata,
+                headers: { "Accept": "application/json" },
+
+                processData: false,
+                beforeSend: function () {
+                },
+                success: function (data, textStatus, xhr) {
+                    console.log(data);
+                    if (data.success == true) {
+
+                        window.location.href = data.message;
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            html: '<p style="font-size: 17px;">' + data.message + '</p>',
+                            returnFocus: true,
+                            returnFocus: false,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+
+                                return false;
+                            }
+                        })
+                    }
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    Swal.fire({
+                        icon: 'error',
+                        html: '<p style="font-size: 17px;">An Error Occured try again later or contact website administration.</p>',
+                        returnFocus: true,
+                        returnFocus: false,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            return false;
+                        }
+                    })
+
+                },
+                complete: function () {
+                }
+            });
+
+            return false;
+
+        });
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,11 @@
+/* TOP MENU GOES HERE BY TECHPEN TECHNOLOGIES */
+
+function top_nav()
+{document.write('')
+}
+
+function navbar()
+{
+    document.write('<div id="cssmenu"><ul><li><a href="index.html">Home</a></li><li class="has-sub"><a href="#"> About Us</a><ul><li><a href="home/About_Us">About SCERTUP</a></li><li><a href="home/organization_structure">ORGANIZATION STRUCTURE</a></li><li><a href="research-support.html">Our faculty</a></li><li class="has-sub"><a href="#">Teacher Training</a><ul><li><a href="pre-service.html">Pre Service</a></li><li><a href="in-service.html">In Service</a></li><li><a href="others.html">Others</li></ul></li><li><a href="research-survey.html">Research Survey</a></li></ul></li><li class="has-sub"><a href="#">Units</a><ul><li><a href="units.html">Units</a></li><li><a href="diet.html">DIETs</a></li><li><a href="btc.html">Pvt. Institutions</a></li></ul></li><li class="has-sub"><a href="#">Educational Materials</a><ul><li class="has-sub"><a href="#">Curriculum</a><ul><li><a href="deied.html">D.El.Ed.</a></li><li><a href="ct.html">CT (Nursery)</a></li><li><a href="ntt.html">NTT</a></li><li><a href="dped.html">D.P.Ed.</a></li><li><a href="primary.html">Primary</a></li><li><a href="upper-primary.html">Upper Primary</a></li><li><a href="seconary.html">Secondary</a></li></ul></li><li class="has-sub"><a href="#">D.El.Ed. content material</a><ul><li><a href="i-sem.html">Ist Semester</a></li><li><a href="ii-sem.html">2nd Semester</a></li><li><a href="iii-sem.html">3rd Semester</a></li><li><a href="iv-sem.html">4th Semester</a></li></ul></li><li><a href="training-module.html">Training modules</a></li><li class="has-sub"><a href="#">e-books</a><ul><li><a href="e-books.html">e-pothi</a></li><li><a href="magazines.html">magazines</a></li><li><a href="Journals.html">journals</a></li></ul></li><li><a href="research.html">Research</a></li><li><a href="survey.html">Survey</a></li><li><a href="others.html">Others</a></li></ul></li><li><a href="government.html">Government Order</a></li><li><a href="rti.html">RTI</a></li><li><a href="competitions.html">Competitions</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></div>')
+}
+

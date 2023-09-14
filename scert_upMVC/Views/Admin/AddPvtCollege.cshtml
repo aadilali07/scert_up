@@ -1,0 +1,65 @@
+﻿@model scert_upMVC.Models.PvtCollege_Models
+@{
+    ViewBag.Title = "AddPvtCollege";
+    Layout = "~/Views/Shared/admin_mst.cshtml";
+}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+
+                <div class="page-body">
+                    <!-- for change area -->
+                    <h3 class="add_heading">Add Private College Informations </h3>
+                    @using (Html.BeginForm("AddPvtCollege", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="page-wrapper" style="background-color: white;">
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">District</label> <br>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" placeholder="Enter district name here ..." value="@Model.District">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Institute Name</label> <br>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="@Model.Inst_Name"
+                                           placeholder="Enter institute name here...">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Number of Seat </label> <br>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="@Model.Seats"
+                                           placeholder="Enter number of seats here...">
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <input type="hidden" name="id" value="@Model.Id" />
+                                    <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Submit</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                        <!-- for change area end  -->
+                </div>
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+

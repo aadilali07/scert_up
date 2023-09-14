@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Video_view";
+    Layout = "~/Views/Shared/admin_mst.cshtml";
+}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="page-body">
+                    <!-- for change area -->
+                    <h3 class="add_heading">List of Video</h3>
+
+                    <div class="card">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..."
+                               title="Type in a name">
+
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table" id="myTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Video Title</th>
+                                            <th>Video Description</th>
+                                            <th>Video URL</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"> The Name of Video</th>
+                                            <td> this video </td>
+                                            <td>youtubr.com</td>
+                                            <td>
+                                                <a href="#">Edit</a> |
+                                                <a href="#">Delete</a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- for change area  end-->
+                </div>
+
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+

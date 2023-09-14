@@ -1,0 +1,70 @@
+﻿@model List<scert_upMVC.Models.manage_dietlist>
+
+@{
+    ViewBag.Title = "Dietlist_view";
+    Layout = "~/Views/Shared/admin_mst.cshtml";
+}
+
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="page-body">
+                    <!-- for change area -->
+                    <h3 class="add_heading">List of DIET Informations </h3>
+
+                    <div class="card">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." title="Type in a name">
+
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table" id="myTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Diet Name</th>
+                                            <th>DIet Address</th>
+                                            <th>Name of Incharge </th>
+                                            <th>Designation</th>
+                                            <th>Contact Number</th>
+                                            <th>Email ID</th>
+                                            <th>Website</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td scope="row">@item.Diet_Name</td>
+                                                <td>@item.Address</td>
+                                                <td>@item.InchargeName</td>
+                                                <td>@item.Designation</td>
+                                                <td>@item.Contact</td>
+                                                <td>@item.Email</td>
+                                                <td>@item.Website>
+
+                                                <td>
+                                                    <a href="/admin/add_Dietlist?id=@(item.id)"><i class="icofont icofont-edit"></i></a>
+                                                    <a href="/admin/delet_DietList?id=@(item.id)"><i class="icofont icofont-trash" style="color:red;"></i></a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- for change area  end-->
+                </div>
+
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>

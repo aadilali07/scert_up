@@ -1,0 +1,61 @@
+﻿@model List<scert_upMVC.Models.manage_compitition>
+@{
+    ViewBag.Title = "compitition_view";
+    Layout = "~/Views/Shared/admin_mst.cshtml";
+}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="page-body">
+                    <!-- for change area -->
+                    <h3 class="add_heading">List Of Competition </h3>
+
+                    <div class="card">
+
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." title="Type in a name">
+
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table" id="myTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Competition Name</th>
+                                            <th>Comp Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            <th scope="row">@item.Comp_Name</th>
+                                            <td>@item.Comp_Date</td>
+
+                                            <td>
+
+                                                <a href="/admin/add_compitition?id=@(item.id)"><i class="icofont icofont-edit"></i></a>
+                                                <a href="/admin/delet_compitition?id=@(item.id)"><i class="icofont icofont-trash" style="color:red;"></i></a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- for change area  end-->
+                </div>
+
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+
