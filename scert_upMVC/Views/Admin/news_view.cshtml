@@ -14,10 +14,9 @@
 
                     <div class="card">
                         <div class="card-block table-border-style">
-                            <input type="text" id="myInput" onkeyup="myFunction()"
-                                   placeholder="Search..." title="Type in a name">
+
                             <div class="table-responsive">
-                                <table class="table" id="myTable">
+                                <table class="table" id="myTable" class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th>News Heading</th>
@@ -32,12 +31,14 @@
                                                 <th scope="row">@item.heading</th>
                                                 <td>@item.date</td>
                                                 <td>
-                                                    <a href="/admin/add_news?id=@(item.id)"><i class="icofont icofont-edit"></i></a>
-                                                    <a href="/admin/news_view?id=@(item.id)"><i class="icofont icofont-trash" style="color:red;"></i></a>
+                                                    <a href="/admin/add_news?id=@(item.id)"><i
+                                                            class="icofont icofont-edit"></i></a>
+                                                    <a href="/admin/news_view?id=@(item.id)"><i
+                                                            class="icofont icofont-trash" style="color:red;"></i></a>
                                                 </td>
                                             </tr>
                                         }
-                                        </tbody>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -54,4 +55,3 @@
         </div>
     </div>
 </div>
-
