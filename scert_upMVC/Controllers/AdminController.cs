@@ -102,7 +102,7 @@ namespace scert_upMVC.Controllers
         [HttpPost]
         public ActionResult news_insert(manage_news news)
         {
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/News/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -113,7 +113,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                news.filepath = "/tempimage/" + uploadpayslipss1;
+                news.filepath = "/News/" + uploadpayslipss1;
 
             }
 
@@ -188,7 +188,7 @@ namespace scert_upMVC.Controllers
         [HttpPost]
         public ActionResult compitition_insert(manage_compitition compitition)
         {
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/Competition/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -199,7 +199,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                compitition.Comp_File_Path = "/tempimage/" + uploadpayslipss1;
+                compitition.Comp_File_Path = "/Competition/" + uploadpayslipss1;
 
             }
 
@@ -275,7 +275,7 @@ namespace scert_upMVC.Controllers
         public ActionResult curriculum_insert(manage_curriculum curriculum)
         {
 
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/Curriculum/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -286,7 +286,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                curriculum.File_Path = "/tempimage/" + uploadpayslipss1;
+                curriculum.File_Path = "/Curriculum/" + uploadpayslipss1;
 
             }
 
@@ -362,7 +362,7 @@ namespace scert_upMVC.Controllers
         public ActionResult DelContent_insert(manage_curriculum DelContent)
         {
 
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/DledContent/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -373,7 +373,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                DelContent.File_Path = "/tempimage/" + uploadpayslipss1;
+                DelContent.File_Path = "/DledContent/" + uploadpayslipss1;
 
             }
 
@@ -519,7 +519,7 @@ namespace scert_upMVC.Controllers
         [HttpPost]
         public ActionResult Go_insert(manage_Go Go)
         {
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/GOs/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -530,7 +530,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                Go.File_Path = "/tempimage/" + uploadpayslipss1;
+                Go.File_Path = "/GOs/" + uploadpayslipss1;
 
             }
 
@@ -605,7 +605,7 @@ namespace scert_upMVC.Controllers
         [HttpPost]
         public ActionResult photoGallery_insert(manage_photoGallery photoGallery)
         {
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/Gallery/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -616,7 +616,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                photoGallery.ImagePath = "/tempimage/" + uploadpayslipss1;
+                photoGallery.ImagePath = "/Gallery/" + uploadpayslipss1;
 
             }
 
@@ -691,7 +691,7 @@ namespace scert_upMVC.Controllers
         [HttpPost]
         public ActionResult Video_insert(manage_Video Video)
         {
-            
+
 
             var dd = db.insert_Video(Video);
 
@@ -738,7 +738,6 @@ namespace scert_upMVC.Controllers
         }
 
         #endregion
-
 
         #region units
 
@@ -888,7 +887,7 @@ namespace scert_upMVC.Controllers
         public ActionResult ebook_insert(manage_ebook ebook)
         {
 
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/EBook/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -899,7 +898,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                ebook.File_Path = "/tempimage/" + uploadpayslipss1;
+                ebook.File_Path = "/EBook/" + uploadpayslipss1;
 
             }
 
@@ -1049,7 +1048,7 @@ namespace scert_upMVC.Controllers
         public ActionResult OtherEduContent_insert(manage_otherEduContent OtherEduContent)
         {
 
-            var path = System.IO.Path.Combine(Server.MapPath("~/tempimage/"));
+            var path = System.IO.Path.Combine(Server.MapPath("~/OtherContent/"));
 
 
             HttpPostedFileBase file1 = Request.Files["fileupload1"];
@@ -1060,7 +1059,7 @@ namespace scert_upMVC.Controllers
             {
                 uploadpayslipss1 = DateTime.Now.ToString("ddMMyy") + System.Guid.NewGuid() + "." + file1.FileName.Split('.')[1];
                 file1.SaveAs(path + uploadpayslipss1);
-                OtherEduContent.File_Path = "/tempimage/" + uploadpayslipss1;
+                OtherEduContent.File_Path = "/OtherContent/" + uploadpayslipss1;
 
             }
 

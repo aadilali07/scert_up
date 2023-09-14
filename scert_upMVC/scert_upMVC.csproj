@@ -566,6 +566,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Competition\" />
+    <Folder Include="Curriculum\" />
+    <Folder Include="DledContent\" />
+    <Folder Include="EBook\" />
+    <Folder Include="Gallery\" />
+    <Folder Include="GOs\" />
+    <Folder Include="News\" />
+    <Folder Include="OtherContent\" />
     <Folder Include="tempimage\" />
   </ItemGroup>
   <ItemGroup>
