@@ -1,4 +1,4 @@
-﻿
+﻿@model List<scert_upMVC.Models.manage_ebook>
 @{
     ViewBag.Title = "EBook";
 }
@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                <h1 class="inn-title">E-Pothi</h1>
+                <h1 class="inn-title">@ViewBag.book</h1>
             </div>
         </div>
     </div>
@@ -22,250 +22,29 @@
                 <ol class="breadcrumb">
                     <li><a href="index.html" class="none external">Home</a></li>
                     <li>Educational Materials </li>
-                    <li class="active">E-Pothi</li>
+                    <li class="active">@ViewBag.book</li>
                 </ol>
             </div>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <tr>
-                    <th>Subject</th>
-                    <th>View</th>
+                    <th width="2%">S.NO.</th>
+                    <th width="80%">Subject</th>
+                    <th width="18%" align="center">View</th>
                 </tr>
-                <tr>
-                    <td>कलरव बृज कक्षा 1</td>
-                    <td><a href="Books/1कलरव.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>कलरव बृज कक्षा 2</td>
-                    <td><a href="Books/कलरव-bhoj-2.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>सहज अवधी कक्षा 1</td>
-                    <td><a href="Books/सहज-अवधी-1.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>सहज अवधी कक्षा 2</td>
-                    <td><a href="Books/सहज-अवधी-2.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Kalrav Bhoj Class 1</td>
-                    <td><a href="BooksKALRAV-Class-1.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Kalrav Bhoj Class 2</td>
-                    <td><a href="Books/KALRAV-Class-2.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Kaksha Bundeli Class 1</td>
-                    <td><a href="Books/kaksha-bundeli-1.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Kaksha Bundeli Class 2</td>
-                    <td><a href="Books/kaksha-bundeli-2.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                <tr>
-                    <td>Gintara Class 3</td>
-                    <td><a href="Books/Gintara-3.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Hamara Parivesh Class 3</td>
-                    <td><a href="Books/hamara-parivesh-3.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Manjari Class 7</td>
-                    <td><a href="Books/books/manjari-7.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Manjari Class 8</td>
-                    <td><a href="Books/manjari-8.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>RAINBOW Class 5</td>
-                    <td><a href="Books/RAINBOW-5.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Sanskrit Class 3</td>
-                    <td><a href="Books/Sanskrit-3.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>गिनतारा कक्षा 4</td>
-                    <td><a href="Books/गिनतारा-4.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>संस्कृत-पीयूषम् कक्षा 4</td>
-                    <td><a href="Books/संस्कृत-पीयूषम्-4.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Gintara Class 2</td>
-                    <td><a href="Books/gintara-2.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>हमारा इतिहास और नागरिक जीवन कक्षा 7</td>
-                    <td><a href="Books/his-7.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Maths  Class 8</td>
-                    <td><a href="Books/गणत-ककष-Class-8.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Maths Class 7</td>
-                    <td><a href="Books/maths-Class-7.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Science Class 6</td>
-                    <td><a href="Books/science-Class-6.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Science Class 7</td>
-                    <td><a href="Books/science-Class-7.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Maths Class 6</td>
-                    <td><a href="Books/maths-Class-6.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Gintara Class 5</td>
-                    <td><a href="Books/Gintara-Class-5.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Manjari Class 6</td>
-                    <td><a href="Books/manjari-Class-6.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Kalrav Class 5</td>
-                    <td><a href="Books/pdf-KALRAV-Class-5.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Rainbow Class 3</td>
-                    <td><a href="Books/pdf-RAINBOW-Class-3.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>EVS Class 5</td>
-                    <td><a href="Books/Evs-Class-5.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Gruh Shilp Class 6</td>
-                    <td><a href="Books/gruh-shilp-Class-6.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Gruh Shilp Class 7</td>
-                    <td><a href="Books/gruh-shilp-class-7.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Gruh Shilp Class 8</td>
-                    <td><a href="Books/gruh-shilp-class-8.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Hamara Parivesh Class 4</td>
-                    <td><a href="Books/HAMARA-PARIVESH-4.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Kalrav Class 1</td>
-                    <td><a href="Books/KALRAV-Class-1.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Kalrav Class 2</td>
-                    <td><a href="Books/KALRAV-CLASS-2.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Kalrav Class 3</td>
-                    <td><a href="Books/Kalrav-class-3.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Kalrav Class 4</td>
-                    <td><a href="Books/kalrav-Class-4.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Khel aur Swashthy</td>
-                    <td><a href="Books/khel-aur-swashthy.pdf" target="_blank"><i class="fa fa-download blue"></i>View</a></td>
-                </tr>
-                <tr>
-                    <td>Krishi Vigyan Class 6</td>
-                    <td><a href="Books/krishi-Class-6.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Krishi Vigyan Class 8</td>
-                    <td><a href="Books/krishi-Class-8.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Krishi Vigyan Class 7</td>
-                    <td><a href="Books/krishi-vigyan-Class-7.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Rainbow Class 4</td>
-                    <td><a href="Books/rainbow.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Rainbow Class 6</td>
-                    <td><a href="Books/Rainbow-class-6.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Rainbow Class 7</td>
-                    <td><a href="Books/rainbow-Class-7.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>Rainbow Class 8</td>
-                    <td><a href="Books/Rainbow-class-8.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>पर्यावरण उच्च प्राथमिक स्तर हेतु</td>
-                    <td><a href="Books/पर्यावरण-उच्च-प्राथमिक-स्तर-हेतु.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>पृथ्वी और हमारा जीवन कक्षा 6</td>
-                    <td><a href="Books/पृथ्वी-और-हमारा-जीवन-6.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>पृथ्वी और हमारा जीवन कक्षा 7</td>
-                    <td><a href="Books/पृथ्वी-और-हमारा-जीवन-7.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>पृथ्वी और हमारा जीवन कक्षा 8</td>
-                    <td><a href="Books/पृथ्वी-और-हमारा-जीवन-8.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>महान व्यक्तित्व कक्षा 6</td>
-                    <td><a href="Books/महान-व्यक्तित्व-कक्षा-6.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>महान व्यक्तित्व कक्षा 7</td>
-                    <td><a href="Books/महान-व्यक्तित्व-कक्षा-7.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>महान व्यक्तित्व कक्षा 8</td>
-                    <td><a href="Books/महान-व्यक्तित्व-कक्षा-8.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-
-                <tr>
-                    <td>संस्कृत पीयूषम् कक्षा 5</td>
-                    <td><a href="Books/संस्कृत-पीयूषम्-कक्षा-5.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>संस्कृत पीयूषम् कक्षा 6</td>
-                    <td><a href="Books/संस्कृत-पीयूषम्-कक्षा-6.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                <tr>
-                    <td>संस्कृत पीयूषम्  कक्षा 7</td>
-                    <td><a href="Books/संस्कृत-पीयूषम् -कक्षा-7.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <td>संस्कृत पीयूषम् कक्षा 8</td>
-                <td><a href="Books/संस्कृत-पीयूषम्-कक्षा-8.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>स्काउट गाइड उच्च प्राथमिक स्तर हेतु</td>
-                    <td><a href="Books/स्काउट-गाइड-उच्च-प्राथमिक-स्तर-हेतु.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>हमारा इतिहास और नागरिक जीवन कक्षा ६</td>
-                    <td><a href="Books/हमारा-इतिहास-और-नागरिक-जीवन-कक्षा-६.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
-                <tr>
-                    <td>हमारा इतिहास और नागरिक जीवन कक्षा ८</td>
-                    <td><a href="Books/हमारा-इतिहास-और-नागरिक-जीवन-कक्षा-८.pdf" target="_blank"><i class="fa fa-download blue"></i> View</a></td>
-                </tr>
+                @{
+                    var count = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.Subject</td>
+                        <td><a href="@item.File_Path" target="_blank" class="btn btn-primary btn-xs">View</a></td>
+                    </tr>
+                    count++;
+                }
             </table>
         </div>
         <!-- InstanceEndEditable -->

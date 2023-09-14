@@ -1,4 +1,4 @@
-﻿
+﻿@model List<scert_upMVC.Models.manage_curriculum>
 @{
     ViewBag.Title = "curriculum";
 }
@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                <h1 class="inn-title">D.El.Ed.</h1>
+                <h1 class="inn-title">@ViewBag.str</h1>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
                     <li><a href="index.html" class="none external">Home</a></li>
                     <li>Educational Materials </li>
                     <li> Curriculum</li>
-                    <li class="active">D.El.Ed.</li>
+                    <li class="active">@ViewBag.str</li>
                 </ol>
             </div>
         </div>
@@ -29,14 +29,22 @@
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
-                        <th width="82%">Subject</th>
-                        <th width="18%" align="center">Download</th>
+                        <th width="2%">S.NO.</th>
+                        <th width="80%">Subject</th>
+                        <th width="18%" align="center">View</th>
                     </tr>
-                    <tr>
-                        <td>BTC Curriculum 2014</td>
-
-                        <td><a href="File/BTC Curriculum UP 2014.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
+                    @{
+                        var count = 1;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.Subject</td>
+                            <td><a href="@item.File_Path" target="_blank" class="btn btn-primary btn-xs">View</a></td>
+                        </tr>
+                        count++;
+                    }
                 </tbody>
             </table>
         </div>

@@ -41,7 +41,6 @@ namespace scert_upMVC.Controllers
 
             faculty = db.getfaculty();
 
-
             return View(faculty);
         }
 
@@ -74,29 +73,43 @@ namespace scert_upMVC.Controllers
 
         public ActionResult units()
         {
+            List<Units_Models> list = new List<Units_Models>();
 
-            return View();
+            list = db.getAllUnitsRecord();
+
+            return View(list);
         }
 
         public ActionResult diets()
         {
+            List<manage_dietlist> dietlist = new List<manage_dietlist>();
 
-            return View();
+            dietlist = db.getAllDietList();
+
+
+            return View(dietlist);
         }
 
         public ActionResult pvt_institute()
         {
+            List<PvtCollege_Models> list = new List<PvtCollege_Models>();
 
-            return View();
+            list = db.GetPvtCollegeList();
+
+            return View(list);
         }
 
         #region Education material
 
         #region curriculum
-        public ActionResult curriculum(string curriculum)
+        public ActionResult curriculum(string str)
         {
+              List<manage_curriculum> curriculum = new List<manage_curriculum>();
 
-            return View();
+            curriculum = db.getcurriculumForHome(str);
+
+            ViewBag.str = str;
+            return View(curriculum);
         }
 
 
@@ -106,8 +119,13 @@ namespace scert_upMVC.Controllers
 
         public ActionResult DEL_ContentMaterial(string sem)
         {
+            List<manage_curriculum> DelContent = new List<manage_curriculum>();
 
-            return View();
+            DelContent = db.getDelContentForHome(sem);
+
+            ViewBag.sem = sem;
+
+            return View(DelContent);
         }
 
 
@@ -117,36 +135,44 @@ namespace scert_upMVC.Controllers
 
         public ActionResult EBook(string book)
         {
+            List<manage_ebook> DelContent = new List<manage_ebook>();
 
-            return View();
+            DelContent = db.getebookForHome(book);
+
+            ViewBag.book = book;
+            return View(DelContent);
         }
 
 
         #endregion
 
-        public ActionResult training_Module(string sem)
+        public ActionResult training_Module(string otcontent)
         {
+            List<manage_otherEduContent> OtherEduContent = new List<manage_otherEduContent>();
 
-            return View();
+            OtherEduContent = db.getOtherEduContentForHome(otcontent);
+
+            ViewBag.str = otcontent;
+            return View(OtherEduContent);
         }
 
-        public ActionResult Research(string sem)
-        {
+        //public ActionResult Research(string sem)
+        //{
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult Survey(string sem)
-        {
+        //public ActionResult Survey(string sem)
+        //{
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult others(string sem)
-        {
+        //public ActionResult others(string sem)
+        //{
 
-            return View();
-        }
+        //    return View();
+        //}
 
 
         #endregion
@@ -155,8 +181,12 @@ namespace scert_upMVC.Controllers
 
         public ActionResult Govt_order()
         {
+            List<manage_Go> Go = new List<manage_Go>();
 
-            return View();
+            Go = db.getGo();
+
+
+            return View(Go);
         }
 
         public ActionResult RTI()
@@ -168,8 +198,32 @@ namespace scert_upMVC.Controllers
         public ActionResult Competition()
         {
 
-            return View();
+            List<manage_compitition> compitition = new List<manage_compitition>();
+
+            compitition = db.getcompitition();
+
+
+            return View(compitition);
         }
+
+        public ActionResult ViewPdf(string ImageName)
+        {
+            // Retrieve the PDF file path based on the item's ID (replace with your logic)
+            //var filePath = GetFilePathById(id);
+            var filePath = ImageName;
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                // Return the PDF file for viewing
+                return File(filePath, "application/pdf", Path.GetFileName(filePath));
+            }
+            else
+            {
+                // Handle the case when the PDF file is not found
+                return HttpNotFound();
+            }
+        }
+
 
         public ActionResult Photo_Gallery()
         {

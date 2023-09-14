@@ -423,6 +423,38 @@ namespace scert_upMVC.Models
             return curriculum;
         }
 
+        public List<manage_curriculum> getcurriculumForHome(string str)
+        {
+            List<manage_curriculum> curriculum = new List<manage_curriculum>();
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_Curriculum", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "getcurriculumForHome");
+            cmd.Parameters.AddWithValue("@Course", str);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            manage_curriculum pro;
+
+            if (sdr.HasRows)
+            {
+                while (sdr.Read())
+                {
+                    pro = new manage_curriculum();
+                    pro.id = sdr["id"].ToString();
+                    pro.Course = sdr["Course"].ToString();
+                    pro.Subject = sdr["Subject"].ToString();
+                    pro.File_Name = sdr["File_Name"].ToString();
+                    pro.File_Path = sdr["File_Path"].ToString();
+
+                    curriculum.Add(pro);
+                }
+            }
+            con.Close();
+
+
+            return curriculum;
+        }
+
         public manage_curriculum getcurriculumbyId(string id)
         {
             manage_curriculum curriculum = new manage_curriculum();
@@ -527,6 +559,38 @@ namespace scert_upMVC.Models
             SqlCommand cmd = new SqlCommand("sp_DledContent", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "getDledContentList");
+            SqlDataReader sdr = cmd.ExecuteReader();
+            manage_curriculum pro;
+
+            if (sdr.HasRows)
+            {
+                while (sdr.Read())
+                {
+                    pro = new manage_curriculum();
+                    pro.id = sdr["id"].ToString();
+                    pro.Course = sdr["Course"].ToString();
+                    pro.Subject = sdr["Subject"].ToString();
+                    pro.File_Name = sdr["File_Name"].ToString();
+                    pro.File_Path = sdr["File_Path"].ToString();
+
+                    curriculum.Add(pro);
+                }
+            }
+            con.Close();
+
+
+            return curriculum;
+        }
+
+        public List<manage_curriculum> getDelContentForHome(string sem)
+        {
+            List<manage_curriculum> curriculum = new List<manage_curriculum>();
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_DledContent", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "getDelContentForHome");
+            cmd.Parameters.AddWithValue("@Course", sem);
             SqlDataReader sdr = cmd.ExecuteReader();
             manage_curriculum pro;
 
@@ -1467,6 +1531,38 @@ namespace scert_upMVC.Models
             return ebook;
         }
 
+        public List<manage_ebook> getebookForHome(string book)
+        {
+            List<manage_ebook> ebook = new List<manage_ebook>();
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_EBook", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "getebookForHome");
+            cmd.Parameters.AddWithValue("@Course", book);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            manage_ebook pro;
+
+            if (sdr.HasRows)
+            {
+                while (sdr.Read())
+                {
+                    pro = new manage_ebook();
+                    pro.id = sdr["id"].ToString();
+                    pro.Course = sdr["Course"].ToString();
+                    pro.Subject = sdr["Subject"].ToString();
+                    pro.File_Name = sdr["File_Name"].ToString();
+                    pro.File_Path = sdr["File_Path"].ToString();
+
+                    ebook.Add(pro);
+                }
+            }
+            con.Close();
+
+
+            return ebook;
+        }
+
         public manage_ebook getebookbyId(string id)
         {
             manage_ebook ebook = new manage_ebook();
@@ -1711,6 +1807,38 @@ namespace scert_upMVC.Models
             SqlCommand cmd = new SqlCommand("sp_OtherEduContent", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "getOtherEduContentList");
+            SqlDataReader sdr = cmd.ExecuteReader();
+            manage_otherEduContent pro;
+
+            if (sdr.HasRows)
+            {
+                while (sdr.Read())
+                {
+                    pro = new manage_otherEduContent();
+                    pro.id = sdr["id"].ToString();
+                    pro.Course = sdr["Course"].ToString();
+                    pro.Subject = sdr["Subject"].ToString();
+                    pro.File_Name = sdr["File_Name"].ToString();
+                    pro.File_Path = sdr["File_Path"].ToString();
+
+                    oherEducontent.Add(pro);
+                }
+            }
+            con.Close();
+
+
+            return oherEducontent;
+        }
+
+        public List<manage_otherEduContent> getOtherEduContentForHome(string otcontent)
+        {
+            List<manage_otherEduContent> oherEducontent = new List<manage_otherEduContent>();
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_OtherEduContent", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "getOtherEduContentForHome");
+            cmd.Parameters.AddWithValue("@Course", otcontent);
             SqlDataReader sdr = cmd.ExecuteReader();
             manage_otherEduContent pro;
 

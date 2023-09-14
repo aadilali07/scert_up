@@ -28,6 +28,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
+
+
+
 </head>
 
 
@@ -578,7 +581,10 @@
                 @RenderBody()
             </div>
 
+
             <script>
+
+
                 $('.dropify').dropify();
 
             </script>
@@ -612,7 +618,23 @@
     <script src="~/adminassets/js/pcoded.min.js"></script>
     <script src="~/adminassets/js/demo-12.js"></script>
     <script src="~/adminassets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- for table data search and pagenator -->'
+    <!-- for cdn  -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+
     <script>
+
+
+        $(document).ready(function () {
+            $('#myTable').dataTable();
+        });
+
+
         var $window = $(window);
         var nav = $('.fixed-button');
         $window.scroll(function () {

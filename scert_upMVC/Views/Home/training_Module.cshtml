@@ -1,4 +1,4 @@
-﻿
+﻿@model List<scert_upMVC.Models.manage_otherEduContent>
 @{
     ViewBag.Title = "training_Module";
 }
@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                <h1 class="inn-title">Training Module</h1>
+                <h1 class="inn-title">@ViewBag.str</h1>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
                 <ol class="breadcrumb">
                     <li><a href="index.html" class="none external">Home</a></li>
                     <li>Educational Materials </li>
-                    <li class="active">Training Module</li>
+                    <li class="active">@ViewBag.str</li>
                 </ol>
             </div>
         </div>
@@ -29,73 +29,23 @@
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
-                        <th width="60%">विषय</th>
-                        <th width="10%" align="center">Download</th>
+                        <th width="2%">S.NO.</th>
+                        <th width="80%">Subject</th>
+                        <th width="18%" align="center">View</th>
                     </tr>
-                    <!--tr>
-                     <td>क्षितिज वर्ष 2018-19</td>
-                     <td><a href="pdf/chitij.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr-->
-                    <tr>
-                        <td>Cutting Concerns</td>
-                        <td><a href="allpdf/training-module/mod-1.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Developing Personal-Social Qualities for Creating a Safe and Healthy School Environment</td>
-                        <td><a href="allpdf/training-module/mod-2.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Art Integrated Learning</td>
-                        <td><a href="allpdf/training-module/mod-3.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>School Based Assessment</td>
-                        <td><a href="allpdf/training-module/mod-4.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Health and Well-being in Schools</td>
-                        <td><a href="allpdf/training-module/mod-5.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Integration of ICT in Teaching</td>
-                        <td><a href="allpdf/training-module/mod-6.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Initiatives in School Education</td>
-                        <td><a href="allpdf/training-module/mod-7.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Pedagogy Concerns</td>
-                        <td><a href="allpdf/training-module/mod-8.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Pedagogy of Mathematics</td>
-                        <td><a href="allpdf/training-module/mod-9.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Pedagogy of Languages</td>
-                        <td><a href="allpdf/training-module/mod-10.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Pedagogy of Science</td>
-                        <td><a href="allpdf/training-module/mod-11.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Pedagogy of Social Sciences</td>
-                        <td><a href="allpdf/training-module/mod-12.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Teaching of English Language at Early Grades</td>
-                        <td><a href="allpdf/training-module/t-3.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>स्वास्थ्य एवं स्वच्छता प्रशिक्षण मॉड्यूल 2017-18</td>
-                        <td><a href="allpdf/training-module/t-1.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>पर्यावरण अध्ययन प्रशिक्षण मॉड्यूल कक्षा 3 से 5</td>
-                        <td><a href="allpdf/training-module/t-2.pdf" target="_blank" class="btn btn-primary btn-xs">View</a></td>
-                    </tr>
+                    @{
+                        var count = 1;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.Subject</td>
+                            <td><a href="@item.File_Path" target="_blank" class="btn btn-primary btn-xs">View</a></td>
+                        </tr>
+                        count++;
+                    }
+
                 </tbody>
             </table>
         </div>
